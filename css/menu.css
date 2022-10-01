@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@1&display=swap');
+
+
+ul{
+    padding: 0 auto;
+    list-style: none;
+    display: flex;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+ul li{
+    margin: 0;
+    margin: 5px;
+
+}
