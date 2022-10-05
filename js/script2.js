@@ -1,62 +1,77 @@
-let modalQt = 0; //Resetar a variavel//
+let cart = [];
+let modalQt = 0;
+let key = 0;
+//constante para carregar estrutura, limpando o código
+const c = (el)=>document.querySelector(el); //para localizar o primeiro item
+const cs = (el)=>document.querySelectorAll(el); //para localizar todos os itens
 
-const c = (Element)=>document.querySelector(Element); //essa constante foi para fazer mais rapido o projeto cada lugar que esta um c e aonde essa constate esta sendo usada//
-const cs = (Element)=>document.querySelectorAll(Element);
-
-modelsJson.map((item, index)=>{ //Aqui foi para pega as informação no outro javascript, obrigado Canal MD Cursos//
-    let modelsItem = c('.models .models-item').cloneNode(true); 
+//mapear  dados recebidos via Json
+//Criando a lista de produtos, modelos
+modelsJson.map((item, index)=>{
+    let modelsItem = c('.models .models-item').cloneNode(true);//dentro da class 'models' e clonar - true indica para pegar subitens
+    // preenchendo as informações dos modelos
     modelsItem.setAttribute('data-key', index);
-    modelsItem.querySelector('.models-item-img img').src = item.img;
-    //modelsItem.querySelector('.models-item--price').innerHTML = item.price[0].toFixed(2);
+    modelsItem.querySelector('.models-item--img img').src= item.img;
     modelsItem.querySelector('.models-item--price').innerHTML = `R$ ${item.price[0].toFixed(2)}`;
     modelsItem.querySelector('.models-item--name').innerHTML = item.name;
     modelsItem.querySelector('.models-item--desc').innerHTML = item.description;
-
-    modelsItem.querySelector('a').addEventListener('click', (e)=>{   // Aqui estou pegando as informação do outro javascipt para colocar no botão que adiciona no carrinho//
-        e.preventDefault();
-        let key = e.target.closest('.models-item').getAttribute('data-key');
-        
+    //Adicionar o evento de click ao tag <a> que temos envolvendo a imagem e o "+"
+    //Vai abrir o Modal - Janela
+    modelsItem.querySelector('a').addEventListener('click', (e)=>{
+        e.preventDefault(); //Previne a ação padrão que iria atualizar a tela
+        //Transforma a variável key em global.
+        key = e.target.closest('.models-item').getAttribute('data-key'); //pegando informação do identificador
         modalQt = 1;
+        //Alimentando os dados do Modal
         c('.modelsBig img').src = modelsJson[key].img;
         c('.modelsInfo h1').innerHTML = modelsJson[key].name;
         c('.modelsInfo--desc').innerHTML = modelsJson[key].description;
-        c('.modelsInfo--actualPrice').innerHTML =  modelsJson[key].price[0].toFixed(2)
-        c('.modelsInfo--size.selected').classList.remove('selected')
-        cs('.modelsInfo-size').forEach((size, sizeIndex)=>{
+        c('.modelsInfo--size.selected').classList.remove('selected');
+        cs('.modelsInfo--size').forEach((size, sizeIndex)=>{
             if(sizeIndex == 2) {
                 size.classList.add('selected');
-                c('.modelsInfo--actualPrice').innerHTML = `R$ ${modelsJson[key].price[sizeIndex].toFixed(2)}`;  //Para que os preço aparece na aba da loja no botao de mais//
+                c('.modelsInfo--actualPrice').innerHTML = `R$ ${modelsJson[key].price[sizeIndex].toFixed(2)}`;
             }
-                size.innerHTML = modelsJson[key].size[sizeIndex];
+            size.innerHTML = modelsJson[key].sizes[sizeIndex];
+            //size.querySelector('span').innerHTML = modelsJson[key].sizes[sizeIndex];
         });
         c('.modelsInfo--qt').innerHTML = modalQt;
-        c('.modelsWindowArea').style.opacity = '0';
+        //Mostrar a janela Modal
+        c('.modelsWindowArea').style.opacity = 0; //criando uma animação
+        //corrigir, faltou o "a" do opacity - Valeu Gilberto dos Santos.
         c('.modelsWindowArea').style.display = 'flex';
-        setTimeout(()=>{
-        c('.modelsWindowArea').style.opacity = '1';
-    },  200);
-    })
+        setTimeout(()=> {
+            c('.modelsWindowArea').style.opacity = 1; //mostrando a janela, sem Timeout, não vemos o efeito
+        }, 200);
+    });
+
+    //preenchendo as informações no site
+    //Depois de ajustado com a constante
+    //document.querySelector('.models-area').append(modelsItem);
     c('.models-area').append(modelsItem);
 });
 
-function closeModal(){   //animação um pouco melhor no botao de voltar//
-    c('.modelsWindowArea').style.opacity = 0;
-    setTimeout(()=>{
-        c('.modelsWindowArea').style.display = 'none';
+//Ações do Modal - janela
+function closeModal(){
+    c('.modelsWindowArea').style.opacity = 0; //criando uma animação
+    setTimeout(()=> {
+        c('.modelsWindowArea').style.display = 'none'; //fechando a janela, sem Timeout, não vemos o efeito
     }, 500);
+    //mostrar o funcionamento via console do navegador, antes de atribuir aos botões
 }
-cs('.modelsInfo--cancelButton, .modelsInfo--cancelMobileButton').forEach((item)=>{ //Aqui e o bota de volta, no windows e mobile//
+
+cs('.modelsInfo--cancelButton, .modelsInfo--cancelMobileButton').forEach((item)=>{
     item.addEventListener('click', closeModal);
 });
 
-c('.modelsInfo--qtmenos').addEventListener('click', ()=>{ //Diminuir um produto da loja//
+c('.modelsInfo--qtmenos').addEventListener('click', ()=>{
     if(modalQt > 1) {
         modalQt--;
         c('.modelsInfo--qt').innerHTML = modalQt;
     }
 });
 
-c('.modelsInfo--qtmais').addEventListener('click', ()=>{   //Aumenta um produto da loja//
+c('.modelsInfo--qtmais').addEventListener('click', ()=>{
     modalQt++;
     c('.modelsInfo--qt').innerHTML = modalQt;
 });
@@ -71,9 +86,24 @@ cs('.modelsInfo--size').forEach((size, sizeIndex)=>{
 });
 
 c('.modelsInfo--addButton').addEventListener('click', ()=>{
+    //Precisamos saber:
+    //Qual o modelo?
+    //console.log("Modelo: " + key);
+    //qual o tamanho?
+    //a leitura é como string, devemos transformar em número
+    //let size = c('.modelsInfo--size.selected').getAttribute('data-key'); 
     let size = parseInt(c('.modelsInfo--size.selected').getAttribute('data-key'));
+    //console.log("Tamanho: " + size);
+    //Quantidade?
+    //console.log("Quantidade: " + modalQt)
+    //Quando adicionamos de forma sucessiva o mesmo item, e mesmo tamanho, não podemos ter várias entradas
+    //Isso é o que ocorre atualmente, precisamos de ajustes
+    //Antes de adicionar devemos verificar se já existe aquele item com aquele tamanho
+    //para isso funcionar vamos criar um identificador
     let identifier = modelsJson[key].id+'@'+size;
+    //vamos verificar se este identificador já está no carrinho
     let locaId = cart.findIndex((item)=>item.identifier == identifier);
+    //se tiver adiciona a quantidade no item já existente, senão acrescento
     if(locaId > -1){
         cart[locaId].qt += modalQt;
     } else {
@@ -88,6 +118,7 @@ c('.modelsInfo--addButton').addEventListener('click', ()=>{
     closeModal();
 });
 
+//ajustando o mobile
 c('.menu-openner').addEventListener('click', ()=>{
     if(cart.length > 0){
         c('aside').style.left = '0';
@@ -97,6 +128,7 @@ c('.menu-openner').addEventListener('click', ()=>{
 c('.menu-closer').addEventListener('click', ()=>{
     c('aside').style.left='100vw';
 });
+
 
 function updateCart() {
     c('.menu-openner span').innerHTML = cart.length;

@@ -1,4 +1,4 @@
-let modelsJson = [ //Esse aqui serve para colocar a informção na pagina, daqui eu pego para colocar em outros scripts //
+let modelsJson = [ //Esse aqui serve para colocar a informação na pagina, daqui eu pego para colocar em outros scripts //
     {id:1, name:'KIT 3 MOLETONS TOPPER CLASSIC MASCULINO', img:'img/356838-1.webp', price:[130.00, 150.00, 200.00], sizes:['P', 'M', 'G'], description:'Garanta total conforto sem perder o estilo em dias mais frios junto ao Kit 3 Moletons Topper Classic.'},
     {id:2, name:'KIT 2 CAMISETAS TOPPER FUTEBOL TECHNIC MASCULINO', img:'img/356814-1.webp', price:[100.00, 150.00, 200.00], sizes:['P', 'M', 'G'], description:'Garanta maior performance em seus trinos e jogos junto ao Kit 2Camisetas Topper Technic.'},
     {id:3, name:'Ki 61 - Hien', img:'img/Ki61Hien.png', price:[100.00, 150.00, 200.00], sizes:['P', 'M', 'G'], description:'Caça fabricado pela Kawasaki para o exercito japones, com motor em linha'},
