@@ -91,7 +91,7 @@ h1 {
 
 .models-item--img {
     width: 200px;
-    height: 100px;
+    height: 150px;
     background-color: #EEE;
     border-radius: 20px;
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.2);
@@ -103,7 +103,7 @@ img{
 }
 
 .models-item--img img {
-    width: 40%;
+    width: 100%;
     height: auto;
 }
 
