@@ -4,37 +4,74 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contatos</title>
     <link rel="stylesheet" href="./css/menu.css">
+    <link rel="stylesheet" href="./css/contatos.css">
 
 </head>
 <body>
-      <ul>
-          <li><a href="./index.html">Home</a></li>
-            <li><a href="./Produtos.html">Produtos</a></li>
-                <li><a href="./Contatos.html">Contatos</a></li>
-                    <li><a href="./QuemSomos.html">Quem Somos</a></li>
-      </ul>
 
-      <div>
+    <header>
+        <nav class="drop">
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+              <li><a href="./Produtos.html">Produtos</a></li>
+                  <li><a href="./Contatos.html">Contatos</a></li>
+                      <li><a href="./QuemSomos.html">Quem Somos</a></li>
+        </ul>
+    </nav>
+    </header>
+      <div class="box">
     <form action="">
-    <label for="">
-        <span>nome</span>
-        <input type="text" class="input_text" name="nome" id="name"/>
-    </label>
-    <label for="">
-        <span>email</span>
-        <input type="text" class="input_text" name="email" id="email"/>
-    </label>
-    <label for="">
-        <span>mensagem</span>
-        <textarea class="mensagem" name="feedback" id="feedback"></textarea>
-        <input type="button" class="button" value="enviar"/>
-    </label>
+        <fieldset>
+            <legend>Formulário do cliente</legend>
+            <br>
+            <div class="inputBox">
+                <input type="text" class="inputUser" name="nome" id="name" required>
+                <label for="nome" class="labelInput">Nome Completo</label>
+            </div>
+            <br>
+            <div class="inputBox">
+                <input type="email" class="inputUser" name="email" id="email" required>
+                <label for="email" class="labelInput">Email</label>
+            </div>
+            <br>
+
+            <div class="inputBox">
+                <input type="tel" class="inputUser" name="telefone" id="telefone" required>
+                <label for="telefone" class="labelInput">Telefone</label>
+            </div>
+            <p>Sexo:</p>
+            <input type="radio" id="feminino" name="genero" value="feminino" required>
+            <label for="feminino">Feminino</label>
+            <br>
+            <input type="radio" id="masculino" name="genero" value="masculino" required>
+            <label for="masculino">Masculino</label>
+            <br>
+            <input type="radio" id="outro" name="genero" value="outro" required>
+            <label for="outro">Outros</label>
+            <br>
+                <label for="data_nascimento">Data de Nascimento:</label>
+                <input type="date" name="data_nascimento" id="data_nascimento" required>
+            <br><br>
+            <div class="inputBox">
+                <input type="text" class="inputUser" name="cidade" id="cidade" required>
+                <label for="cidade" class="labelInput">Cidade</label>
+            </div>
+            <br>
+            <div class="inputBox">
+                <input type="text" class="inputUser" name="estado" id="estado" required>
+                <label for="estado" class="labelInput">Estado</label>
+            </div>
+            <br>
+            <div class="inputBox">
+                <input type="tex" class="inputUser" name="endereco" id="endereco" required>
+                <label for="endereco" class="labelInput">Endereço</label>
+            </div>
+            <br>
+            <input type="submit" name="submit" id="submit">
+        </fieldset>
 </form>
 </div>
-
-
-
 </body>
 </html>

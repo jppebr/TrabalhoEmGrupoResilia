@@ -12,7 +12,7 @@ body {
 .models {
     display: none;
 }
-header { /* Aqui e para estilizar o carrinho no mobile*/
+header{ /* Aqui e para estilizar o carrinho no mobile*/
     position: fixed;
     left: 0;
     top: 0;
