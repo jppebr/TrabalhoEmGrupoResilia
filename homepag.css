@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=MuseoModerno:wght@900&display=swap");
+
+body{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    background-color: black;
+    font-size: 16px;
+}                
+
+nav{
+    background-color: black;
+    grid-area: n;
+}
+
+main{
+    background-color: rgb(255, 255, 255);
+    grid-area: m;
+}
+
+
+footer{
+    background-color: white;
+    grid-area: f;
+}
+
+.layout{
+    display: grid;
+    grid-template-rows: 12vh 78vh 10vh;
+    grid-template-columns: 1fr;
+    grid-template-areas: "n n n"
+                        "m m m"
+                        " f f f";
+}
+
+.container-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-family: "MuseoModerno", "cursive";
+    font-size: 1.4em;
+    color: white;
+
+
+}
+
+.container-nav img{
+    width: 75px;
+    height: 70px;
+    margin-top: 3px;
+    
+}
+
+.container-nav p {
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+/* .nav-bar{
+position: absolute;
+width: 849px;
+height: 693px;
+background: #FFA500;
+}
+
+.barra-de-navegação{
+position: absolute;
+width: 849px;
+height: 65px;   
+background: #000000;
+box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.25);
+} */
