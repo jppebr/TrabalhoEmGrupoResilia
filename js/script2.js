@@ -106,10 +106,10 @@ c('.menu-openner').addEventListener('click', ()=>{
     }
 });
 
-c('.menu-closer').addEventListener('click', ()=>{
+c('.menu-closer').addEventListener('click', ()=>{ //Ajustando o botão de fechar no carrinho de compras//
     c('aside').style.left='100vw';
 });
-function updateCart() {
+function updateCart() {  //Essa Função serve para que a janela do carrinhos de compras aparece da barra lateral//
     c('.menu-openner span').innerHTML = cart.length;
     if(cart.length > 0) {
         c('aside').classList.add('show');

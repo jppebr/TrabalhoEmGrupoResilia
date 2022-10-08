@@ -12,7 +12,7 @@ body {
 .models {
     display: none;
 }
-header {
+header { /* Aqui e para estilizar o carrinho no mobile*/
     position: fixed;
     left: 0;
     top: 0;
@@ -35,14 +35,14 @@ header {
 .menu-openner span {
     margin-right: 10px;
 }
-.menu-closer {
+.menu-closer {  /*Estilizar o botão de fechar na janela do carrinho de compras*/
     width: 32px;
     height: 32px;
     display: none;
     font-size: 30px;
 }
 
-aside {
+aside {   /*Estilizar a janela do carrinho de compras*/
     background-color: #9CCBE6;
     width: 0vw;
     font-family: Arial, Helvetica, sans-serif;
@@ -69,7 +69,7 @@ h1 {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.models-area {
+.models-area { /*Estilizar os modelos das roupas em coluna*/
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
@@ -89,7 +89,7 @@ h1 {
 
 }
 
-.models-item--img {
+.models-item--img { /*Aqui foi para estilizar as imagems das roupas*/
     width: 200px;
     height: 150px;
     background-color: #EEE;
