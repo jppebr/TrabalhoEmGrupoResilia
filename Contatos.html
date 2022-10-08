@@ -5,73 +5,125 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contatos</title>
-    <link rel="stylesheet" href="./css/menu.css">
     <link rel="stylesheet" href="./css/contatos.css">
+    <link rel="stylesheet" href="./css/sitegrupo.css">
+    <link rel="stylesheet" href="./css/homepag.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
 </head>
 <body>
-
     <header>
-        <nav class="drop">
-        <ul>
-            <li><a href="./index.html">Home</a></li>
-              <li><a href="./Produtos.html">Produtos</a></li>
-                  <li><a href="./Contatos.html">Contatos</a></li>
-                      <li><a href="./QuemSomos.html">Quem Somos</a></li>
-        </ul>
-    </nav>
+        <div class="layout">
+            <nav>
+                <div class="container-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Produtos.html">Produtos</a></li>
+                    <div id=""> <img src="img/IMG-20220930-WA0008edit.jpg" width="" height=""></div>
+                    <li class="nav-item"><a class="nav-link" href="Contatos.html">Contatos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="QuemSomos.html">Quem Somos</a></li>
+                </div>
+            </nav>
+            <main> <br><br><br><br> <div class="box">
+                <form action="">
+                    <fieldset>
+                        <legend>Formulário do cliente</legend>
+                        <br>
+                        <div class="inputBox">
+                            <input type="text" class="inputUser" name="nome" id="name" required>
+                            <label for="nome" class="labelInput">Nome Completo</label>
+                        </div>
+                        <br>
+                        <div class="inputBox">
+                            <input type="email" class="inputUser" name="email" id="email" required>
+                            <label for="email" class="labelInput">Email</label>
+                        </div>
+                        <br>
+            
+                        <div class="inputBox">
+                            <input type="tel" class="inputUser" name="telefone" id="telefone" required>
+                            <label for="telefone" class="labelInput">Telefone</label>
+                        </div>
+                        <p>Sexo:</p>
+                        <input type="radio" id="feminino" name="genero" value="feminino" required>
+                        <label for="feminino">Feminino</label>
+                        <br>
+                        <input type="radio" id="masculino" name="genero" value="masculino" required>
+                        <label for="masculino">Masculino</label>
+                        <br>
+                        <input type="radio" id="outro" name="genero" value="outro" required>
+                        <label for="outro">Outros</label>
+                        <br>
+                            <label for="data_nascimento">Data de Nascimento:</label>
+                            <input type="date" name="data_nascimento" id="data_nascimento" required>
+                        <br><br>
+                        <div class="inputBox">
+                            <input type="text" class="inputUser" name="cidade" id="cidade" required>
+                            <label for="cidade" class="labelInput">Cidade</label>
+                        </div>
+                        <br>
+                        <div class="inputBox">
+                            <input type="text" class="inputUser" name="estado" id="estado" required>
+                            <label for="estado" class="labelInput">Estado</label>
+                        </div>
+                        <br>
+                        <div class="inputBox">
+                            <input type="tex" class="inputUser" name="endereco" id="endereco" required>
+                            <label for="endereco" class="labelInput">Endereço</label>
+                        </div>
+                        <br>
+                        <input type="submit" name="submit" id="submit">
+                    </fieldset>
+            </form></main>
+            <footer></footer>
+        </div>
     </header>
-      <div class="box">
-    <form action="">
-        <fieldset>
-            <legend>Formulário do cliente</legend>
-            <br>
-            <div class="inputBox">
-                <input type="text" class="inputUser" name="nome" id="name" required>
-                <label for="nome" class="labelInput">Nome Completo</label>
-            </div>
-            <br>
-            <div class="inputBox">
-                <input type="email" class="inputUser" name="email" id="email" required>
-                <label for="email" class="labelInput">Email</label>
-            </div>
-            <br>
 
-            <div class="inputBox">
-                <input type="tel" class="inputUser" name="telefone" id="telefone" required>
-                <label for="telefone" class="labelInput">Telefone</label>
+
+<footer>
+    <div class="boxs">
+        <h2>Início</h2>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Produtos</a></li>
+            </ul>
+        </div>
+    <div class="boxs">
+        <h2>Informações</h2>   
+            <ul>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contato</a></li>
+              <li><a href="#">Email</a></li>
+            </ul>
+        </div>
+    <div class="boxs">
+        <h2>Suporte</h2>
+            <ul>
+             <li><a href="#">Faq</a></li>
+             <li><a href="#">Telefone</a></li>
+             <li><a href="#">Chat</a></li>
+            </ul>
+        </div>
+    <div class="boxs">
+        <h2>Sobre Nós</h2>
+            <p>
+                Apaixonados por esportes de uma forma geral e motivado por um sentimento especial de sustentabilidade, 
+                a Sport Planet é uma empresa nacional que desde 2020, tem aliado um grande conhecimento 
+                de processos de materiais esportivos com preocupações de ordem ecológica. 
+            </p>
+        </div>
+   </footer>
+   <div class="footer">
+        <div class="sociais">
+            <div class="social">
+                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
             </div>
-            <p>Sexo:</p>
-            <input type="radio" id="feminino" name="genero" value="feminino" required>
-            <label for="feminino">Feminino</label>
-            <br>
-            <input type="radio" id="masculino" name="genero" value="masculino" required>
-            <label for="masculino">Masculino</label>
-            <br>
-            <input type="radio" id="outro" name="genero" value="outro" required>
-            <label for="outro">Outros</label>
-            <br>
-                <label for="data_nascimento">Data de Nascimento:</label>
-                <input type="date" name="data_nascimento" id="data_nascimento" required>
-            <br><br>
-            <div class="inputBox">
-                <input type="text" class="inputUser" name="cidade" id="cidade" required>
-                <label for="cidade" class="labelInput">Cidade</label>
-            </div>
-            <br>
-            <div class="inputBox">
-                <input type="text" class="inputUser" name="estado" id="estado" required>
-                <label for="estado" class="labelInput">Estado</label>
-            </div>
-            <br>
-            <div class="inputBox">
-                <input type="tex" class="inputUser" name="endereco" id="endereco" required>
-                <label for="endereco" class="labelInput">Endereço</label>
-            </div>
-            <br>
-            <input type="submit" name="submit" id="submit">
-        </fieldset>
-</form>
+         <div class="social">
+            <a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+        </div>
+            <div class="social">
+            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+   </div>
 </div>
 </body>
 </html>
