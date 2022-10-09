@@ -1,15 +1,25 @@
 .banner{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+}
+.banner2{
+    display: flex;
+    justify-content: center;
 }
 .banner1 img{
-    max-width:500px;
+    max-width:350px;
     width: auto;
     max-height: 1000px;
     height: auto;
 }
 .banner2 img{
-    max-width:500px;
+    max-width:350px;
+    width: auto;
+    max-height: 1000px;
+    height: auto;
+}
+.banner3 img{
+    max-width:699px;
     width: auto;
     max-height: 1000px;
     height: auto;
