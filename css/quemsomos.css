@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo:ital@1&display=swap');
-.somos{
+
+.somos {
     font-family: 'Arimo', sans-serif;
     font-size: 20px;
+}
+
+main {
+    padding: 20px;
 }
